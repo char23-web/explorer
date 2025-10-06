@@ -8,7 +8,6 @@ import { ClusterProvider } from '@providers/cluster';
 import { ScrollAnchorProvider } from '@providers/scroll-anchor';
 import type { Viewport } from 'next';
 import dynamic from 'next/dynamic';
-import { Rubik } from 'next/font/google';
 import { Metadata } from 'next/types';
 const SearchBar = dynamic(() => import('@components/SearchBar'), {
     ssr: false,
@@ -26,12 +25,12 @@ export const viewport: Viewport = {
     width: 'device-width',
 };
 
-const rubikFont = Rubik({
-    display: 'swap',
-    subsets: ['latin'],
+// Temporarily use system fonts fallback for sandboxed build environment
+// TODO: Restore Google Fonts when running in environment with internet access
+const rubikFont = {
+    className: '',
     variable: '--explorer-default-font',
-    weight: ['300', '400', '700'],
-});
+};
 
 export default function RootLayout({
     analytics,
