@@ -15,10 +15,16 @@ Thank you for your interest in contributing to the Solana Explorer project! This
 
 ## Getting Started
 
+For detailed setup instructions, see [SETUP.md](SETUP.md).
+
+**Quick setup for contributors:**
+
 1. Fork the repository
 2. Clone your fork: `git clone https://github.com/YOUR-USERNAME/explorer.git`
-3. Install dependencies: `pnpm install`
+3. Run the setup script: `bash setup.sh` or `make setup`
 4. Create a new branch for your feature: `git checkout -b feature/your-feature-name`
+
+Alternatively, follow the manual setup steps in [SETUP.md](SETUP.md).
 
 > **Important Note**: We are currently not accepting PRs that add wallet adapter or similar functionality to the Explorer. Please check with maintainers before starting work on such features.
 
