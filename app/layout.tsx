@@ -25,6 +25,8 @@ export const viewport: Viewport = {
     width: 'device-width',
 };
 
+const FONT_STACK = 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
+
 export default function RootLayout({
     analytics,
     children,
@@ -33,7 +35,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" style={{ '--explorer-default-font': 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' } as React.CSSProperties}>
+        <html lang="en" style={{ '--explorer-default-font': FONT_STACK } as React.CSSProperties}>
             <head>
                 <link rel="icon" href="/favicon.png" type="image/png" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
