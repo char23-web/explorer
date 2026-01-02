@@ -13,8 +13,6 @@ NC='\033[0m' # No Color
 
 # Required versions
 REQUIRED_PNPM_VERSION="9.10.0"
-REQUIRED_NODE_VERSION_MIN="18.20"
-REQUIRED_NODE_VERSION_MIN_ALT="20.19"
 
 echo "=========================================="
 echo "Solana Explorer Setup"
@@ -37,16 +35,20 @@ echo "Found Node.js version: $NODE_VERSION"
 NODE_MAJOR=$(echo $NODE_VERSION | cut -d. -f1)
 NODE_MINOR=$(echo $NODE_VERSION | cut -d. -f2)
 
-# Check if version is 18.20+ or 20.19+
+# Check if version is 18.20+ or 20.19+, with upper bound of 22
 if [[ $NODE_MAJOR -eq 18 ]] && [[ $NODE_MINOR -ge 20 ]]; then
     # Node 18.20 or higher
     NODE_OK=true
 elif [[ $NODE_MAJOR -eq 20 ]] && [[ $NODE_MINOR -ge 19 ]]; then
     # Node 20.19 or higher
     NODE_OK=true
-elif [[ $NODE_MAJOR -gt 20 ]]; then
-    # Node 21+ (future versions)
+elif [[ $NODE_MAJOR -eq 21 ]]; then
+    # Node 21.x
     NODE_OK=true
+elif [[ $NODE_MAJOR -gt 21 ]] && [[ $NODE_MAJOR -le 22 ]]; then
+    # Node 22.x (allow with warning)
+    NODE_OK=true
+    echo -e "${YELLOW}Warning: Node.js version $NODE_VERSION has not been tested. Recommended versions are ^18.20 or ^20.19${NC}"
 else
     NODE_OK=false
 fi

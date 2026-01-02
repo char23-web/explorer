@@ -1,4 +1,4 @@
-.PHONY: help setup install dev build test test-ci lint format clean
+.PHONY: help setup install dev build test test-ci lint format clean coverage sb build-sb
 
 # Default target
 help:
