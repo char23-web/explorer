@@ -65,6 +65,18 @@ export function MergeDetailsCard(props: {
                     <Address pubkey={info.stakeHistorySysvar} alignRight link />
                 </td>
             </tr>
+
+            <tr>
+                <td colSpan={2}>
+                    <div className="alert alert-info mb-0 mt-3">
+                        <small>
+                            <strong>Merge Eligibility:</strong> Able to merge. These branches can be automatically merged
+                            when both stake accounts are delegated to the same validator, have the same lockup settings,
+                            and share the same stake authority.
+                        </small>
+                    </div>
+                </td>
+            </tr>
         </InstructionCard>
     );
 }
