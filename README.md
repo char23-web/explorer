@@ -6,6 +6,33 @@
 
 The Solana Explorer is a web application that allows users to explore the Solana blockchain. It provides a user-friendly interface to view transactions, accounts, blocks, and other on-chain data. The Explorer supports various protocol integrations, allowing users to inspect and understand different types of transactions and instructions on the Solana network.
 
+## Getting Started
+
+For detailed setup instructions, see [SETUP.md](SETUP.md).
+
+**Quick start:**
+
+```bash
+# Clone the repository
+git clone https://github.com/char23-web/explorer.git
+cd explorer
+
+# Run the automated setup script
+bash setup.sh
+
+# Start the development server
+pnpm dev
+```
+
+Alternatively, use Make commands:
+
+```bash
+make setup    # Initial setup
+make dev      # Start development server
+make build    # Build for production
+make test     # Run tests
+```
+
 ## Contributing
 
 We welcome contributions to the Solana Explorer! Before submitting a pull request, please:
